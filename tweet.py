@@ -4,6 +4,7 @@ import tweepy
 import json
 import psycopg2 as pg
 from datetime import date
+from db_connection import db_connection
 
 
 def get_api():
@@ -29,12 +30,6 @@ def get_api():
         quit()
 
     return tweepy.API(auth)
-
-
-def db_conn():
-    conn = pg.connect('dbname=happybd')
-    cur = conn.cursor()
-    return conn, cur
 
 
 def users_to_tweet(conn, cur):
@@ -68,7 +63,7 @@ class Wish:
 
 
 def main():
-    conn, cur = db_conn()
+    conn, cur = db_connection()
     api = get_api()
     for wish in users_to_tweet(conn, cur):
         status = f'Happy birthday from {wish.wisher_displayed_name} @{wish.target_username}, time flies {wish.target_name}!'
