@@ -59,7 +59,6 @@ class Wish:
             self.wisher_displayed_name = wisher_displayed_name
 
     def get_default_wisher_displayed_name(conn, wisher_id):
-        print(wisher_id)
         cur = conn.cursor()
         cur.execute(
             "SELECT default_wisher_displayed_name FROM users WHERE id = %s",
