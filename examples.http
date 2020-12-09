@@ -1,0 +1,37 @@
+POST http://localhost:8080/sign_up/
+username: wisher
+password: wisher
+default_wisher_displayed_name: wisher
+
+#######################################
+
+POST http://localhost:8080/add_friend/
+username: wisher
+password: wisher
+target_name: friend
+target_username: friend
+target_birthday: 2020-12-10
+
+#######################################
+
+GET http://localhost:8080/friends/
+username: wisher
+password: wisher
+
+# Example response:
+
+# HTTP/1.0 200 OK
+# Content-Type: application/json
+# Content-Length: 127
+# Access-Control-Allow-Origin: *
+# Server: Werkzeug/1.0.1 Python/3.8.5
+# Date: Wed, 09 Dec 2020 23:51:43 GMT
+#
+# [
+#   {
+#     "birthday": "2020-12-10",
+#     "name": "friend",
+#     "username": "friend",
+#     "wisher_displayed_name": null
+#   }
+# ]
