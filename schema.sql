@@ -1,8 +1,7 @@
 CREATE TABLE users (
 	id SERIAL,
 	username TEXT NOT NULL UNIQUE,
-	-- TODO obviously hash this.
-	password TEXT NOT NULL,
+	hashed_password BYTEA NOT NULL,
 	default_wisher_displayed_name TEXT NOT NULL,
 	PRIMARY KEY (id)
 );
