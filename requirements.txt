@@ -1,2 +1,5 @@
 tweepy
 psycopg2
+flask
+flask_limiter
+flask-cors
