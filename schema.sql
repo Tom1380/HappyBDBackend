@@ -15,5 +15,5 @@ CREATE TABLE targets (
 	-- If it's not null, then we use the default_wisher_displayed_name.
 	wisher_displayed_name TEXT,
 	wisher_id INTEGER NOT NULL REFERENCES users (id),
-	PRIMARY KEY (username)
+	PRIMARY KEY (username, wisher_id)
 );
